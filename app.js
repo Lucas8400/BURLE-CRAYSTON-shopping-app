@@ -1,15 +1,30 @@
+let cart = [];
+
+function addToCart(article) {
+  const existingArticle = cart.find(item => item.id === article.id);
+  if (existingArticle) {
+    existingArticle.quantity++;
+  } else {
+    cart.push({ ...article, quantity: 1 });
+  }
+  console.log(cart);
+}
+
 async function fetchArticles() {
-    try {
-        const response = await fetch('http://localhost:3000/articles');
-        const articles = await response.json();
-        displayArticles(articles);
-    } catch (error) {
-        console.error('Erreur lors de la récupération des articles :', error);
-    }
+  try {
+    const response = await fetch('http://localhost:3000/articles');
+    const articles = await response.json();
+    displayArticles(articles);
+  } catch (error) {
+    console.error('Erreur lors de la récupération des articles :', error);
+  }
 }
 
 function displayArticles(articles) {
     const articleList = document.querySelector('.article-list');
+
+    // Initialisation du panier
+    let cart = [];
 
     articles.forEach(article => {
         const articlePreview = document.createElement('div');
@@ -47,6 +62,15 @@ function displayArticles(articles) {
 
         const addToCartBtn = document.createElement('button');
         addToCartBtn.textContent = 'Ajouter au panier';
+        addToCartBtn.addEventListener('click', () => {
+            // Ajout de l'article au panier
+            cart.push({
+                id: article.id,
+                titre: article.titre,
+                prix: article.prix,
+            });
+            console.log(cart); // Affichage du panier dans la console
+        });
 
         const viewDetailsBtn = document.createElement('button');
         viewDetailsBtn.textContent = 'Voir la fiche produit';
