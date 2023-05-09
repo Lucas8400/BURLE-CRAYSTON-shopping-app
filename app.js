@@ -46,13 +46,15 @@ function displayArticles(articles) {
         }
 
         const addToCartBtn = document.createElement('button');
+        addToCartBtn.className = 'add-to-cart-btn';
         addToCartBtn.textContent = 'Ajouter au panier';
 
         const viewDetailsBtn = document.createElement('button');
         viewDetailsBtn.textContent = 'Voir la fiche produit';
-        viewDetailsBtn.addEventListener('click', () => {
-            window.location.href = `/articles/${article.id}`;
+        viewDetailsBtn.addEventListener("click", () => {
+            window.location.href = `details.html?id=${article.id}`;
         });
+
 
         const ctnButtons = document.createElement('div');
         ctnButtons.classList.add('ctn-buttons');
@@ -62,6 +64,7 @@ function displayArticles(articles) {
         articleList.appendChild(articlePreview);
 
     });
+
 }
 
 fetchArticles();
