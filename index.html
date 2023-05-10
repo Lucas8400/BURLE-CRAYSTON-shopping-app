@@ -12,56 +12,47 @@
             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
         </svg>
     </header>
-    <div class="article-list"></div>
-<header>
-    <h1>Boutique en ligne</h1>
-</header>
-<div class="filters">
-  <div class="filters1">
-    <label for="category-select">Catégorie :</label>
-    <select name="category-select" id="category-select">
-      <option value="all">Mixte</option>
-      <option value="homme">Homme</option>
-      <option value="femme">Femme</option>
-    </select>
-  </div>
-  <div class="filters2">
-    <label for="color-select">Couleur :</label>
-    <select name="color-select" id="color-select">
-      <option value="all">Toutes</option>
-      <option value="blanc">Blanc</option>
-      <option value="marron">Marron</option>
-      <option value="rose">Rose</option>
-      <option value="rouge">Rouge</option>
-      <option value="jaune">Jaune</option>
-    </select>
-  </div>
-  <div class="filters3">
-    <label for="price-select">Ordre :</label>
-    <select id="price-select">
-      <option value="all">Tous les prix</option>
-      <option value="price-asc">Prix croissant</option>
-      <option value="price-desc">Prix décroissant</option>
-    </select>
-    
-  </div>
-</div>
-<div class="article-list"></div>
+    <div class="filters">
+        <div class="filters1">
+            <label for="category-select">Catégorie :</label>
+            <select name="category-select" id="category-select">
+                <option value="all">Mixte</option>
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+            </select>
+        </div>
+        <div class="filters2">
+            <label for="color-select">Couleur :</label>
+            <select name="color-select" id="color-select">
+                <option value="all">Toutes</option>
+                <option value="blanc">Blanc</option>
+                <option value="marron">Marron</option>
+                <option value="rose">Rose</option>
+                <option value="rouge">Rouge</option>
+                <option value="jaune">Jaune</option>
+            </select>
+        </div>
+        <div class="filters3">
+            <label for="price-select">Ordre :</label>
+            <select id="price-select">
+                <option value="all">Tous les prix</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+            </select>
 
-    <div class="overlay"></div>
+        </div>
+    </div>
+    <div class="article-list"></div>
+
     <div class="cart">
-        <h2>Panier</h2>
-        <ul class="cart-list"></ul>
+        <h2>Mon panier</h2>
+        <div class="cart-list"></div>
         <p class="cart-total">Total : 0 €</p>
         <button class="empty-cart-btn">Vider le panier</button>
         <button class="checkout-btn">Commander</button>
     </div>
 
-
-<script src="filter.js"></script>
-
-<script src="panier.js"></script>
-<script src="app.js"></script>
-
+    <script src="app.js"></script>
+    <script src="panier.js"></script>
 </body>
 </html>

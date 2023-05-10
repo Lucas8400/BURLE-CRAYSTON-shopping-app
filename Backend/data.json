@@ -66,10 +66,10 @@
     {
         "id":"5",
         "titre":"Casquette",
-        "description":"La casquette est un accessoire de mode pratique et stylé. Elle est disponible dans une variété de styles, de matériaux et de couleurs, offrant un large choix pour compléter n'importe quelle tenue. Elle peut protéger votre visage du soleil, dissimuler une mauvaise coupe de cheveux, ou simplement ajouter une touche de style à votre look. Les casquettes sont souvent ajustables pour s'adapter à toutes les tailles de tête et peuvent être portées de différentes façons : vers l'arrière pour un look décontracté, vers l'avant pour un look plus classique. Enfin, la casquette est facile à entretenir et à nettoyer, ce qui en fait un accessoire pratique pour une garde-robe de tous les jours.",
+        "description":"La casquette est un accessoire de mode pratique et stylé. Elle peut protéger votre visage du soleil, dissimuler une mauvaise coupe de cheveux, ou simplement ajouter une touche de style à votre look. Les casquettes sont souvent ajustables pour s'adapter à toutes les tailles de tête et peuvent être portées de différentes façons : vers l'arrière pour un look décontracté, vers l'avant pour un look plus classique. Enfin, la casquette est facile à entretenir et à nettoyer, ce qui en fait un accessoire pratique pour une garde-robe de tous les jours.",
         "prix":"30",
         "devise":"€",
-        "categorie":"homme,femme",
+        "categorie":"homme",
         "sous-categorie":"casquette",
         "couleur":"marron",
         "tailles":["Taille Unique"],
