@@ -64,13 +64,13 @@ function displayArticles(articles) {
         addToCartBtn.className = 'add-to-cart-btn';
         addToCartBtn.textContent = 'Ajouter au panier';
         addToCartBtn.addEventListener('click', () => {
-            // Ajout de l'article au panier
+
             cart.push({
                 id: article.id,
                 titre: article.titre,
                 prix: article.prix,
             });
-            console.log(cart); // Affichage du panier dans la console
+            console.log(cart);
         });
 
         const viewDetailsBtn = document.createElement('button');
