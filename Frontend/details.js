@@ -45,6 +45,17 @@ function displayArticleDetails(article) {
     const addToCartBtn = document.createElement('button');
     addToCartBtn.className = 'add-to-cart-btn-details';
     addToCartBtn.textContent = 'Ajouter au panier';
+    addToCartBtn.addEventListener('click', () => {
+        addToCart({
+            id: article.id,
+            titre: article.titre,
+            prix: article.prix,
+            img1: article.img1,
+            reduction: article.reduction,
+            quantity: article.quantity
+        });
+        displayCart();
+    });
 
     articleDetails.append(title, price, addToCartBtn, description);
 }
