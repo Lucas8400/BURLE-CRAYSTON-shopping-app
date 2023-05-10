@@ -74,4 +74,4 @@ function displayArticles(articles) {
 
 }
 
-fetchArticles();
+
