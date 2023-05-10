@@ -1,15 +1,3 @@
-let cart = [];
-
-function addToCart(article) {
-  const existingArticle = cart.find(item => item.id === article.id);
-  if (existingArticle) {
-    existingArticle.quantity++;
-  } else {
-    cart.push({ ...article, quantity: 1 });
-  }
-  console.log(cart);
-}
-
 async function fetchArticles() {
   try {
     const response = await fetch('http://localhost:3000/articles');
@@ -22,9 +10,6 @@ async function fetchArticles() {
 
 function displayArticles(articles) {
     const articleList = document.querySelector('.article-list');
-
-    // Initialisation du panier
-    let cart = [];
 
     articles.forEach(article => {
         const articlePreview = document.createElement('div');
@@ -64,21 +49,19 @@ function displayArticles(articles) {
         addToCartBtn.className = 'add-to-cart-btn';
         addToCartBtn.textContent = 'Ajouter au panier';
         addToCartBtn.addEventListener('click', () => {
-
-            cart.push({
+            addToCart({
                 id: article.id,
                 titre: article.titre,
                 prix: article.prix,
             });
-            console.log(cart);
         });
+
 
         const viewDetailsBtn = document.createElement('button');
         viewDetailsBtn.textContent = 'Voir la fiche produit';
         viewDetailsBtn.addEventListener("click", () => {
             window.location.href = `details.html?id=${article.id}`;
         });
-
 
         const ctnButtons = document.createElement('div');
         ctnButtons.classList.add('ctn-buttons');
