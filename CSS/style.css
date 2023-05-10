@@ -128,7 +128,7 @@ button:hover {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(255, 255, 255);
     width: 800px;
     height: 70px;
 
@@ -149,7 +149,7 @@ button:hover {
   .filters select {
     padding: 8px;
     border: none;
-    background-color: #dadada;
+    background-color: #eeeeee;
     color: #000000;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
