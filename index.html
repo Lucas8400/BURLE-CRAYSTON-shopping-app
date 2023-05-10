@@ -9,6 +9,14 @@
 <header>
     <h1>Boutique en ligne</h1>
 </header>
+<div class="filters">
+    <label for="category-select">Catégorie :</label>
+    <select name="category-select" id="category-select">
+      <option value="all">Tous</option>
+      <option value="homme">Homme</option>
+      <option value="femme">Femme</option>
+    </select>
+  </div>
 <div class="article-list"></div>
 
 <div class="cart">
@@ -17,6 +25,8 @@
     <p class="cart-total">Total : 0 €</p>
     <button class="empty-cart-btn">Vider le panier</button>
 </div>
+
+<script src="tri.js"></script>
 
 <script src="panier.js"></script>
 <script src="app.js"></script>
