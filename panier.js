@@ -23,6 +23,23 @@ function emptyCart() {
     displayCart();
 }
 
+const cartState = document.querySelector('#cart-icon');
+const cartContainer = document.querySelector('.cart');
+const overlay = document.querySelector('.overlay');
+
+cartState.addEventListener('click', () => {
+    if (cartContainer.classList.contains('open')) {
+        cartContainer.classList.remove('open');
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none'
+    } else {
+        cartContainer.classList.add('open');
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto'
+    }
+});
+
+
 function displayCart() {
     const cartList = document.querySelector('.cart-list');
     cartList.innerHTML = '';
@@ -36,30 +53,43 @@ function displayCart() {
         img.style.width = '50px';
 
         const title = document.createElement('h3');
-        title.classList.add('article-title');
+        title.classList.add('article-title-cart');
         title.textContent = article.titre;
 
         const price = document.createElement('p');
-        price.className = 'article-price';
-        price.textContent = `${article.prix} €`;
+        price.className = 'article-price-cart';
+        price.textContent = `${article.prix - article.prix * article.reduction / 100} €`;
+
+        const quantity = document.createElement('p');
+        quantity.className = 'article-quantity-cart';
+        quantity.textContent = `Quantité : ${article.quantity}`;
 
         const removeBtn = document.createElement('button');
         removeBtn.textContent = 'Supprimer';
+        removeBtn.className = 'remove-btn-cart';
         removeBtn.addEventListener('click', () => {
             removeArticleFromCart(article.id);
         });
+        const ctnPriceTitle = document.createElement('div');
+        ctnPriceTitle.classList.add('ctn-price-title');
+        ctnPriceTitle.append(title, price);
 
-        articleItem.append(img, title, price, removeBtn);
+        articleItem.append(img,ctnPriceTitle, quantity, removeBtn);
         cartList.appendChild(articleItem);
     });
 
-    const total = cart.reduce((sum, article) => sum + Number(article.prix), 0);
+    const total = cart.reduce((sum, article) => sum + (article.prix - article.prix * article.reduction / 100) * article.quantity, 0);
     const cartTotal = document.querySelector('.cart-total');
     cartTotal.textContent = `Total : ${total} €`;
 }
 
 const emptyCartBtn = document.querySelector('.empty-cart-btn');
 emptyCartBtn.addEventListener('click', emptyCart);
+
+const checkoutBtn = document.querySelector('.checkout-btn');
+checkoutBtn.addEventListener('click', () => {
+    alert('Merci pour votre commande!');
+});
 
 displayCart();
 

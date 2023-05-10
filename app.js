@@ -53,7 +53,11 @@ function displayArticles(articles) {
                 id: article.id,
                 titre: article.titre,
                 prix: article.prix,
+                img1: article.img1,
+                reduction: article.reduction,
+                quantity: article.quantity
             });
+            displayCart();
         });
 
 
